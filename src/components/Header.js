@@ -7,7 +7,7 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Stack } from "@chakra-ui/react";
 
 const socials = [
   {
@@ -73,6 +73,7 @@ const Header = () => {
   return (
     <Box
       position="fixed"
+      zIndex={1}
       top={0}
       left={0}
       right={0}
@@ -84,11 +85,14 @@ const Header = () => {
       backgroundColor="#18181b"
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
-        <HStack
-          px={16}
+        <Stack
+          px={{ lg: 16, base: 4 }}
+          direction={{ md: "row", base: "column" }}
           py={4}
+          gap={{ lg: 0, base: 5 }}
           justifyContent="space-between"
           alignItems="center"
+          wrap="wrap"
         >
           <nav>
             <HStack spacing={8}>
@@ -111,7 +115,7 @@ const Header = () => {
               {/* Add links to Projects and Contact me section */}
             </HStack>
           </nav>
-        </HStack>
+        </Stack>
       </Box>
     </Box>
   );
